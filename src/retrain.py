@@ -12,7 +12,7 @@ import dagshub
 # Load env
 load_dotenv()
 
-# 🔥 DagsHub setup
+# DagsHub setup
 DAGSHUB_REPO_OWNER = os.getenv("DAGSHUB_REPO_OWNER")
 DAGSHUB_REPO_NAME = os.getenv("DAGSHUB_REPO_NAME")
 DAGSHUB_USER_TOKEN = os.getenv("DAGSHUB_USER_TOKEN")
@@ -26,7 +26,7 @@ if DAGSHUB_REPO_OWNER and DAGSHUB_REPO_NAME and DAGSHUB_USER_TOKEN:
         mlflow=True
     )
 
-# 🔥 REMOVE local MLflow URI
+# REMOVE local MLflow URI
 # mlflow.set_tracking_uri(...) ❌
 
 FEATURES = joblib.load("artifacts/selected_features.joblib")
@@ -75,7 +75,7 @@ def train(df):
 
 
 def retrain():
-    # 🔥 Only keep experiment (DagsHub handles URI)
+    #  Only keep experiment (DagsHub handles URI)
     mlflow.set_experiment("aqi_prediction")
 
     df = load_training_data()
