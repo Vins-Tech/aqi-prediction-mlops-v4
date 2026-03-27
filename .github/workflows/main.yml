@@ -3,7 +3,7 @@ name: Daily AQI Retraining
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/6 * * * *"
+    - cron: "0 */2 * * *"
 
 jobs:
   retrain:
